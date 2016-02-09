@@ -1,0 +1,14 @@
+doctype html
+html(lang="ru")
+  head
+    meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+    title!="Строительство загородных домов Санкт-Петербурге и Ленинградской области"
+    link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css')
+    link(rel='stylesheet', href='css/custom.css')
+  body
+    include ./header.jade
+    div.container
+      include ./navigation.jade
+      block content
+    include ./footer.jade
+    include ./scripts.jade
