@@ -7,4 +7,4 @@ env:
     - "FTP_USER=user"
     - "FTP_PASSWORD=password"
   after_success:
-    "curl --ftp-create-dirs -T uploadfilename -u $FTP_USER:$FTP_PASSWORD ftp://sftp.avers.esy.es/public_html"
+    "curl --ftp-create-dirs -T uploadfilename -u $FTP_USER:$FTP_PASSWORD ftp://ftp.avers.esy.es/public_html"
