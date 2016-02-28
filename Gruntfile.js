@@ -20,22 +20,32 @@ module.exports = function(grunt) {
                 }
             }
         },
+        "sass": { // Task
+            dist: { // Target
+                options: { // Target options
+                    style: "expanded"
+                },
+                files: {
+                    "build/css/custom.css": "src/css/custom.scss"
+                }
+            }
+        },
         "http-server": {
             "dev": {
                 // the server root directory 
                 root: "build",
-                host: "0.0.0.0",     
+                host: "0.0.0.0",
                 // the server port 
                 // can also be written as a function, e.g. 
                 // port: function() { return 8282; } 
                 port: 8989,
 
-                showDir : true,
+                showDir: true,
                 autoIndex: true,
-     
+
                 // server default file extension 
                 //ext: "html",
-     
+
                 // run in parallel with other tasks 
                 runInBackground: true,
 
@@ -45,20 +55,12 @@ module.exports = function(grunt) {
         },
         "copy": {
             main: {
-                files: [
-                    {
-                      flatten: true,
-                        expand: true,
-                        src: ['src/js/*.js'],
-                        dest: 'build/js'
-                    },
-                    {
-                      flatten: true,
-                        expand: true,
-                        src: ['src/css/*.css'],
-                        dest: 'build/css'
-                    },
-                ]
+                files: [{
+                    flatten: true,
+                    expand: true,
+                    src: ['src/js/*.js'],
+                    dest: 'build/js'
+                }]
             }
         },
         "ftp-deploy": {
@@ -77,12 +79,12 @@ module.exports = function(grunt) {
             files: [
                 "src/*.jade",
                 "src/js/*.js",
-                "src/css/*.css",
+                "src/css/*.scss",
             ],
             options: {
                 livereload: true
             },
-            tasks: ["jade", "copy"]
+            tasks: ["jade", "sass", "copy"]
         }
     });
 
@@ -91,8 +93,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-ftp-deploy");
     grunt.loadNpmTasks("grunt-contrib-copy");
     grunt.loadNpmTasks("grunt-http-server");
+    grunt.loadNpmTasks("grunt-contrib-sass");
 
-    grunt.registerTask("default", ["jade", "copy", "http-server", "watch"]);
-    grunt.registerTask("full", ["jade", "copy", "ftp-deploy"]);
+    grunt.registerTask("default", ["jade", "sass", "copy", "http-server", "watch"]);
+    grunt.registerTask("deploy", ["jade", "sass", "copy", "ftp-deploy"]);
 
 };
