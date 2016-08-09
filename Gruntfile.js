@@ -96,6 +96,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-contrib-sass");
 
     grunt.registerTask("default", ["jade", "sass", "copy", "http-server", "watch"]);
-    grunt.registerTask("deploy", ["jade", "sass", "copy", "ftp-deploy"]);
+    grunt.registerTask("build",   ["jade", "sass", "copy"]);
+    grunt.registerTask("deploy",  ["jade", "sass", "copy", "ftp-deploy"]);
 
 };
