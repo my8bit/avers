@@ -93,7 +93,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-ftp-deploy");
     grunt.loadNpmTasks("grunt-contrib-copy");
     grunt.loadNpmTasks("grunt-http-server");
-    grunt.loadNpmTasks("grunt-contrib-sass");
+    grunt.loadNpmTasks("grunt-sass");
 
     grunt.registerTask("default", ["jade", "sass", "copy", "http-server", "watch"]);
     grunt.registerTask("build",   ["jade", "sass", "copy"]);
