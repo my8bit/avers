@@ -1,38 +1,35 @@
-header.page-header
-  div.row
-    div.col-md-8.col-sm-offset-1
-      h1 Строительная компания «Аверс»
+header.page-header(itemscope itemtype="http://schema.org/LocalBusiness")
+  div.container
+    div.row
+      div.text-center
+        h1(itemprop="name") Строительная компания «Аверс»
+      //div.col-md-4
+        gcse:search
 
-  div.row
-    div.col-md-4.col-sm-offset-1
-      img(src="//xn----7sbgmv3ambhbl.xn--p1ai/templates/jbinsideout/images/logo/Avers.png").pull-left
-      div(temtype="http://schema.org/LocalBusiness" itemscope) Компания «Аверс» c 2000 года профессионально занимается коттеджным строительством и строительными работами в Санкт-Петербурге и Ленинградской области.
-    div.col-md-2 
-      strong Звоните:
-      p
-        big
+    div.row.information
+      div.col-md-5
+        // img(src="//xn----7sbgmv3ambhbl.xn--p1ai/templates/jbinsideout/images/logo/Avers.png").pull-left
+        h5 О нас:
+        div(itemprop="description" temtype="http://schema.org/LocalBusiness" itemscope) С 2000 года мы профессионально занимаемся коттеджным строительством и строительными работами в Санкт-Петербурге и Ленинградской области.
+      div.col-md-2
+        h5 Звоните:
+        div
           a(href="tel:+78122345878" itemprop="telephone") +78122345878
-    div.col-md-2 
-      strong Работаем:
-      br
-      span
-        small
+      div.col-md-2 
+        h5 Работаем:
+        div(itemprop="openingHours" content="Mo,Tu,We,Th,Fr 09:30-18:00")
           strong Пн-Пт: 
           | 9:30 - 18:00
           br
           strong Сб-Вс: 
           | выходные
-    div.col-md-2 
-      strong Приходите:
-      address
-        small г. Санкт-Петербург
-          br 
-          | Каменноостровский пр., 63
-          br
-          a(href="#") Как к нам добраться?
-  //div.row
-    div.col-sm-12
-      gcse:search
+      div.col-md-3
+        h5 Приходите:
+        address
+          div г. Санкт-Петербург
+          div Каменноостровский пр., 63
+          div
+            a(href="#") Как к нам добраться?
 
 
 

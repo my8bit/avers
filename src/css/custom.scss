@@ -16,6 +16,20 @@ h1.tmp {
     height: 8em;
 }
 
+#navbar-main {
+    background-color: rgba(0,0,0,.8);
+    margin-bottom: 1em;
+}
+
+div[itemprop="description"]::first-letter {
+    margin-left: 2em;
+}
+
 .carousel-caption {
     background-color: rgba(0,0,0,0.5);
 }
+
+header .information {
+ // font-size: small;
+}
+
