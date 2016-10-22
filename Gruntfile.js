@@ -115,7 +115,8 @@ module.exports = function(grunt) {
         },
         minifyHtml: {
           options: {
-              cdata: true
+              cdata: true,
+              conditionals: true
           },
           dist: {
             files: {
