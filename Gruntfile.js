@@ -40,10 +40,10 @@ module.exports = function(grunt) {
         "sass": { // Task
           dist: { // Target
             options: { // Target options
-                style: "compressed"
+              style: "compressed"
             },
             files: {
-                "build/css/custom.css": "src/css/custom.scss"
+              "build/css/custom.css": "src/css/custom.scss"
             }
           },
           debug: {
