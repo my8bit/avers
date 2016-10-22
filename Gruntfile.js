@@ -1,7 +1,7 @@
 module.exports = function(grunt) {
 
     grunt.initConfig({
-        "jade": {
+        "pug": {
             compile: {
                 options: {
                     pretty: true,
@@ -10,13 +10,13 @@ module.exports = function(grunt) {
                     }
                 },
                 files: {
-                    "build/index.html": ["src/index.jade"],
-                    "build/ceni.html": ["src/ceni.jade"],
-                    "build/stroitelstvo.html": ["src/stroitelstvo.jade"],
-                    "build/obustroistvo.html": ["src/obustroistvo.jade"],
-                    "build/garantii.html": ["src/garantii.jade"],
-                    "build/chavo.html": ["src/chavo.jade"],
-                    "build/kontakti.html": ["src/kontakti.jade"]
+                    "build/index.html": ["src/index.pug"],
+                    "build/ceni.html": ["src/ceni.pug"],
+                    "build/stroitelstvo.html": ["src/stroitelstvo.pug"],
+                    "build/obustroistvo.html": ["src/obustroistvo.pug"],
+                    "build/garantii.html": ["src/garantii.pug"],
+                    "build/chavo.html": ["src/chavo.pug"],
+                    "build/kontakti.html": ["src/kontakti.pug"]
                 }
             }
         },
@@ -77,26 +77,26 @@ module.exports = function(grunt) {
         },
         "watch": {
             files: [
-                "src/*.jade",
+                "src/*.pug",
                 "src/js/*.js",
                 "src/css/*.scss",
             ],
             options: {
                 livereload: true
             },
-            tasks: ["jade", "sass", "copy"]
+            tasks: ["pug", "sass", "copy"]
         }
     });
 
-    grunt.loadNpmTasks("grunt-contrib-jade");
+    grunt.loadNpmTasks("grunt-contrib-pug");
     grunt.loadNpmTasks("grunt-contrib-watch");
     grunt.loadNpmTasks("grunt-ftp-deploy");
     grunt.loadNpmTasks("grunt-contrib-copy");
     grunt.loadNpmTasks("grunt-http-server");
     grunt.loadNpmTasks("grunt-sass");
 
-    grunt.registerTask("default", ["jade", "sass", "copy", "http-server", "watch"]);
-    grunt.registerTask("build",   ["jade", "sass", "copy"]);
-    grunt.registerTask("deploy",  ["jade", "sass", "copy", "ftp-deploy"]);
+    grunt.registerTask("default", ["pug", "sass", "copy", "http-server", "watch"]);
+    grunt.registerTask("build",   ["pug", "sass", "copy"]);
+    grunt.registerTask("deploy",  ["pug", "sass", "copy", "ftp-deploy"]);
 
 };
