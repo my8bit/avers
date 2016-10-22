@@ -22,7 +22,7 @@ h1.tmp {
 }
 
 div[itemprop="description"]::first-letter {
-    margin-left: 2em;
+    margin-left: 1em;
 }
 
 .carousel-caption {
@@ -32,4 +32,26 @@ div[itemprop="description"]::first-letter {
 header .information {
  // font-size: small;
 }
+
+.google-maps {
+  position: relative;
+  padding-bottom: 75%; // This is the aspect ratio
+  height: 0;
+  overflow: hidden;
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .navbar-brand {
+    display: none;
+  }
+}
+
+
 
