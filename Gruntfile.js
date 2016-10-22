@@ -40,7 +40,7 @@ module.exports = function(grunt) {
         "sass": { // Task
           dist: { // Target
             options: { // Target options
-                style: "expanded"
+                style: "compressed"
             },
             files: {
                 "build/css/custom.css": "src/css/custom.scss"
@@ -48,7 +48,9 @@ module.exports = function(grunt) {
           },
           debug: {
             options: { // Target options
-                style: "expanded"
+                style: "expanded",
+                debugInfo: true,
+                update: true
             },
             files: {
                 "build/css/custom.css": "src/css/custom.scss"
