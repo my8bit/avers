@@ -14,7 +14,11 @@ header.page-header(itemscope itemtype="http://schema.org/LocalBusiness")
       div.col-md-2
         h5 Звоните:
         div
-          a(href="tel:+78122345878" itemprop="telephone") +78122345878
+          p
+            a(href="tel:+78122345878" itemprop="telephone") +78122345878
+          p
+            button(type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal") Open Modal
+          
       div.col-md-2 
         h5 Работаем:
         div(itemprop="openingHours" content="Mo,Tu,We,Th,Fr 09:30-18:00")
@@ -31,5 +35,14 @@ header.page-header(itemscope itemtype="http://schema.org/LocalBusiness")
           div
             a(href="/kontakti.html#map") Как к нам добраться?
 
-
+div#myModal.modal.fade(role="dialog")
+  div.modal-dialog
+    div.modal-content
+      div.modal-header
+        button.close(type="button" data-dismiss="modal") &times;
+        h4.modal-title Modal Header
+      div.modal-body
+        p Some text in the modal.
+      div.modal-footer
+        button.btn.btn-default(type="button" class="btn btn-default" data-dismiss="modal") Close
 
