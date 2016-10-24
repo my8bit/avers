@@ -16,8 +16,9 @@ header.page-header(itemscope itemtype="http://schema.org/LocalBusiness")
         div
           p
             a(href="tel:+78122345878" itemprop="telephone") +78122345878
-          p
-            button(type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal") Open Modal
+          p 
+            h5 Cтоимость строительства:
+            button(type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#myModal") Рассчитать
           
       div.col-md-2 
         h5 Работаем:
@@ -34,7 +35,7 @@ header.page-header(itemscope itemtype="http://schema.org/LocalBusiness")
           | Каменноостровский пр., 63
           div
             a(href="/kontakti.html#map") Как к нам добраться?
-
+// TODO refactor ove to separate file
 div#myModal.modal.fade(role="dialog")
   div.modal-dialog
     div.modal-content
